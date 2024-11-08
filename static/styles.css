@@ -1,0 +1,305 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "ArameMonoBold";
+    src: url('/webFonts/ArameMonoBold/font.woff2') format('woff2'), url('/webFonts/ArameMonoBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "ArameMonoRegular";
+    src: url('/webFonts/ArameMonoRegular/font.woff2') format('woff2'), url('/webFonts/ArameMonoRegular/font.woff') format('woff');
+}
+
+
+:root {
+    font-size: 16px;
+    --padding-xxs: calc(var(--padding) / 6);
+    --padding-xs: calc(var(--padding) / 4);
+    --padding-s: calc(var(--padding) / 2);
+    --padding: 1rem;
+    --padding-l: calc(var(--padding) * 2);
+    --padding-xl: calc(var(--padding) * 4);
+    --padding-2xl: calc(var(--padding) * 8); /*128*/
+    --padding-3xl: calc(var(--padding) * 12); /*192*/
+    --black: oklch(20.27% 0.01 39.3);
+    --white: oklch(96.72% 0 0);
+    /* --orange: oklch(65.86% 0.15 62.12); */
+    --orange: oklch(71.36% 0.1598 65.18);
+    --dark-grey: oklch(38.67% 0 0);
+    --readable-text-width: 40rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter;
+    color: var(--black);
+    line-height: 1.5;
+    background-color: #D9D9D9;
+    margin: var(--padding) 0;
+}
+
+
+
+/* TYPOGRAPHY ------------------------------------------------- */
+
+
+h1, h2, h3, h4 { 
+    font-family: ArameMonoBold;
+    margin-bottom: var(--padding-xs);
+    margin-top: 0;
+    line-height: 1.2;
+    margin-bottom: var(--padding-xs);
+}
+
+h1 { font-size: 2.4rem;}
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+h2.small-header {
+    font-family: ArameMonoRegular;
+    font-size: 1rem;
+    letter-spacing: 1.75px;
+    margin-bottom: var(--padding);
+}
+
+a#logo {
+    font-family: ArameMonoBold;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+    /* font-weight: 700; */
+}
+
+p.big {
+    font-size: 1.8rem;
+    /* font-weight: 600; */
+}
+
+#hero-banner .header {
+    font-family: ArameMonoBold;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: var(--padding);
+}
+#hero-banner #orange-text {
+    color: var(--orange);
+    /* -webkit-text-stroke: 1px var(--white); */
+}
+
+p { margin: 0 0 var(--padding-s) 0}
+p.small-text { font-size: 0.8rem;}
+
+/* code styles here so they're applied to one-liners.
+hugo seems to apply them automatically in the HTML to multi-line code. */
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    color:#f8f8f2;
+    background-color:#272822;
+    -moz-tab-size:4;
+    -o-tab-size:4;
+    tab-size:4;
+}
+
+
+/* LAYOUT ------------------------------------------------- */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding) 0;
+}
+
+section, div.page, header {
+    width: 100%;
+}
+
+/* section widths */
+.section-inner, .nav-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.section-inner {
+    padding: var(--padding-2xl) 0;
+}
+
+#hero-banner > .section-inner {
+    padding: var(--padding-3xl) 0;
+}
+
+#contact-form > .section-inner, #about > .section-inner  {
+    width: var(--readable-text-width);
+}
+
+div.page {
+    margin-top: 0; margin-bottom: 0;
+}
+
+html, body {
+    height: 98%; /* because there needs to be room for the header. fix this later. */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Viewport height */
+}
+
+.page {
+    flex: 1;
+}
+
+footer {
+    text-align: right;
+    padding: var(--padding) 0;
+}
+
+
+/* INPUTS ------------------------------------------------- */
+
+
+input, button, a.primary-button {
+    padding: var(--padding-s) var(--padding) !important;
+}
+
+button {
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid black;
+}
+
+a.primary-button {
+    color: var(--black);
+    background-color: var(--orange);
+    text-decoration: none;
+}
+
+
+/* HOMEPAGE VISUAL STYLES ------------------------------------------------- */
+
+
+/* COLORS */
+.bg-light {
+    background-color: var(--white);
+}
+.bg-dark {
+    background-color: var(--dark-grey);
+    color: var(--white);
+}
+.bg-dark h3 {
+    color: var(--orange);
+}
+
+/* fill color is defined within the svg itself. technical limitations */
+.grid {
+    background: url('/img/grid.svg') repeat-x;
+    width: 100%;
+    height: 100px;
+    background-size: auto 100%;
+}
+
+section {
+    border-bottom: 1px solid;
+}
+
+/* CARDS */
+.card > img {
+    max-width: 100%;
+    margin-bottom: var(--padding);
+}
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--padding-l); 
+}
+.card-container-column {
+    flex-direction: column;
+}
+/* it is a regular card with its contents in a column */
+.card {
+    flex: 1;
+    min-width: 0;
+    max-width: calc(33.33% - var(--padding-l)); 
+    box-sizing: border-box;
+}
+/* the card itself is a flex row with an image on the left and text on the right */
+.card-flex-row {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    gap: var(--padding);
+    flex-direction: row;
+}
+.card-flex-row img {
+    width: 4rem;
+}
+.card-flex-row-text {
+    max-width: var(--readable-text-width);
+}
+
+
+
+/* MISC */
+
+hr.thick {
+    height: 1px;
+    background: var(--black);
+    border: 0px solid;
+    margin-block-start: var(--padding-s);
+    margin-block-end: var(--padding-s);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form > .section-inner {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+}
+
+#contact-form input, #contact-form textarea {
+    max-width: var(--readable-text-width);
+    margin-bottom: var(--padding-s);
+}
+
+#contact-form form {
+    margin-top: var(--padding-l);
+}
+
+
+
+/* RESPONSIVE ------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    /* adds left/right margin when the body gets at/below browser width */
+    .section-inner, .nav-container {
+        width: 90% !important;
+    }
+  }
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+    .card-container {
+        flex-direction: column;
+    }
+    .card {
+        max-width: 100%;
+    }
+
+    p.big {
+        font-size: 1.6rem;
+    }
+    #hero-banner .header {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+}
