@@ -119,23 +119,54 @@
         </div>
     </section>
 
-    <section class="bg-light" id="contact-form">
+    <section class="bg-light" id="contact-section">
         <div class="section-inner">
             <h2>Let's work together.</h2>
             <p>hello@apptron.consulting</p>
+
             <form id="contact-form">
-                <input></input>
-                <textarea></textarea>
-                <button>Send message</button>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="entry.385455371" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="entry.111699906" required></textarea>
+                
+                <button type="submit">Submit</button>
             </form>
+            
+            <p id="confirmation" style="display:none;">Thanks! We got your message.</p>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contact-form');
+                
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    const formData = new FormData(form);
+            
+                    fetch('https://docs.google.com/forms/d/e/1FAIpQLSd8kmf754OCwAGALapbO7wlFfG7y7Jd5V4-j7tswwYFMbjuBA/formResponse', {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    }).then(() => {
+                        document.getElementById('confirmation').style.display = 'block';
+                        form.reset(); // Reset the form
+                    }).catch(error => {
+                        console.error('Error!', error.message);
+                    });
+                });
+            });
+            </script>
+            
         </div>
     </section>
+
+
 
     <section class="grid">
         <!-- svg grid background in here -->
     </section>
-
-
 
 
 

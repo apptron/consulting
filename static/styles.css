@@ -90,7 +90,7 @@ p.big {
 }
 
 p { margin: 0 0 var(--padding-s) 0}
-p.small-text { font-size: 0.8rem;}
+p.small-text, label { font-size: 0.8rem;}
 
 /* code styles here so they're applied to one-liners.
 hugo seems to apply them automatically in the HTML to multi-line code. */
@@ -131,7 +131,7 @@ section, div.page, header {
     padding: var(--padding-3xl) 0;
 }
 
-#contact-form > .section-inner, #about > .section-inner  {
+#contact-section > .section-inner, #about > .section-inner  {
     width: var(--readable-text-width);
 }
 
@@ -158,11 +158,12 @@ footer {
 }
 
 
-/* INPUTS ------------------------------------------------- */
+/* INPUTS / FORMS ------------------------------------------------- */
 
 
-input, button, a.primary-button {
+input, button, a.primary-button, textarea {
     padding: var(--padding-s) var(--padding) !important;
+    font: inherit;
 }
 
 button {
@@ -258,7 +259,7 @@ hr.thick {
     flex-direction: column;
 }
 
-#contact-form > .section-inner {
+#contact-section > .section-inner {
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
 }
@@ -268,9 +269,11 @@ hr.thick {
     margin-bottom: var(--padding-s);
 }
 
-#contact-form form {
+#contact-form {
     margin-top: var(--padding-l);
 }
+
+
 
 
 
