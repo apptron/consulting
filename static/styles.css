@@ -259,12 +259,7 @@ hr.thick {
     flex-direction: column;
 }
 
-#contact-section > .section-inner {
-    padding-left: var(--padding-xl);
-    padding-right: var(--padding-xl);
-}
-
-#contact-form input, #contact-form textarea {
+#contact-form input, #contact-form textarea, #contact-form button {
     max-width: var(--readable-text-width);
     margin-bottom: var(--padding-s);
 }
