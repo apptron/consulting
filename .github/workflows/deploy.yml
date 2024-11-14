@@ -12,11 +12,11 @@ jobs:
     steps:
       # Checkout the repository
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Updated to v4 for Node.js 20 compatibility
 
       # Set up Hugo
       - name: Set up Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3  # Updated to v3 for Node.js 20 compatibility
         with:
           hugo-version: 'latest'  # You can specify a version if needed
 
@@ -26,7 +26,7 @@ jobs:
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # Updated to v4 for Node.js 20 compatibility
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
