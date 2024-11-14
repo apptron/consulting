@@ -10,23 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Check out the repository
-        uses: actions/checkout@v4  # Updated to v4 for Node.js 20 compatibility
+        uses: actions/checkout@v4
 
-      # Set up Hugo
       - name: Set up Hugo
-        uses: peaceiris/actions-hugo@v3  # Updated to v3 for Node.js 20 compatibility
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'  # You can specify a version if needed
+          hugo-version: 'latest'
 
-      # Build the site with Hugo
       - name: Build the site
         run: hugo
 
-      # Deploy to GitHub Pages
+      - name: Add CNAME for Custom Domain
+        run: echo "apptron.consulting" > public/CNAME  # Replace with your custom domain
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # Updated to v4 for Node.js 20 compatibility
+        uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
