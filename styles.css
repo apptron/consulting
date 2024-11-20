@@ -84,7 +84,7 @@ p.big {
     line-height: 1.2;
     margin-bottom: var(--padding);
 }
-#hero-banner #orange-text {
+.orange-text {
     color: var(--orange);
     /* -webkit-text-stroke: 1px var(--white); */
 }
