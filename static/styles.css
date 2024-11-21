@@ -201,6 +201,11 @@ a.primary-button {
     height: 100px;
     background-size: auto 100%;
 }
+/* i don't know why there's a tiny gap in this one spot, it's related to
+the bottom border applied to sections */
+#hero-banner + .grid {
+    margin-top: -1px;
+}
 
 section {
     border-bottom: 1px solid;
